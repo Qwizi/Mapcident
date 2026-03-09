@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { MapPin, Calendar } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ReportStatusBadge } from "./ReportStatusBadge"
@@ -7,9 +6,10 @@ import type { Report, Category } from "@/lib/types"
 interface ReportCardProps {
   report: Report
   category?: Category
+  onClick?: () => void
 }
 
-export function ReportCard({ report, category }: ReportCardProps) {
+export function ReportCard({ report, category, onClick }: ReportCardProps) {
   const date = new Date(report.created_at).toLocaleDateString("pl-PL", {
     day: "numeric",
     month: "short",
@@ -17,7 +17,7 @@ export function ReportCard({ report, category }: ReportCardProps) {
   })
 
   return (
-    <Link href={`/reports/${report.id}`}>
+    <div onClick={onClick} role="button" tabIndex={0} onKeyDown={(e) => { if (e.key === "Enter") onClick?.() }}>
       <Card className="hover:shadow-md transition-shadow cursor-pointer">
         <CardHeader className="pb-2">
           <div className="flex items-start justify-between gap-2">
@@ -41,12 +41,12 @@ export function ReportCard({ report, category }: ReportCardProps) {
             <MapPin className="h-3 w-3" />
             {report.latitude.toFixed(4)}, {report.longitude.toFixed(4)}
           </div>
-          <div className="flex items-center gap-1 text-xs text-muted-foreground">
+          <div suppressHydrationWarning className="flex items-center gap-1 text-xs text-muted-foreground">
             <Calendar className="h-3 w-3" />
             {date}
           </div>
         </CardContent>
       </Card>
-    </Link>
+    </div>
   )
 }

@@ -6,7 +6,7 @@ from ninja_extra import NinjaExtraAPI
 from ninja_jwt.controller import NinjaJWTDefaultController
 
 from apps.users.views import AuthController
-from apps.categories.views import CategoryController
+from apps.categories.views import CategoryController, CategoryGroupController
 from apps.reports.views import ReportController
 from apps.comments.views import CommentController
 
@@ -15,6 +15,7 @@ api.register_controllers(
     NinjaJWTDefaultController,
     AuthController,
     CategoryController,
+    CategoryGroupController,
     ReportController,
     CommentController,
 )

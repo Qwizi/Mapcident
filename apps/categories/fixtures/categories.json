@@ -1,0 +1,500 @@
+[
+  {
+    "model": "categories.categorygroup",
+    "pk": "c944c19d-e968-44a8-9651-4556a9435e67",
+    "fields": {
+      "name": "Drogi i chodniki",
+      "slug": "drogi-i-chodniki",
+      "icon": "🛣️",
+      "color": "#EF4444",
+      "order": 0,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "671fdd09-8a55-42cd-8cd3-ab7a63df9c04",
+    "fields": {
+      "group": "c944c19d-e968-44a8-9651-4556a9435e67",
+      "name": "Dziura w jezdni",
+      "slug": "dziura-w-jezdni",
+      "icon": "🛣️",
+      "color": "#EF4444",
+      "order": 0,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "d18a99b0-0fd5-442c-905d-659a50517e2e",
+    "fields": {
+      "group": "c944c19d-e968-44a8-9651-4556a9435e67",
+      "name": "Uszkodzony chodnik",
+      "slug": "uszkodzony-chodnik",
+      "icon": "🛣️",
+      "color": "#EF4444",
+      "order": 1,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "9117efb0-6146-40b6-8c3e-876c7063b787",
+    "fields": {
+      "group": "c944c19d-e968-44a8-9651-4556a9435e67",
+      "name": "Uszkodzona ścieżka rowerowa",
+      "slug": "uszkodzona-sciezka-rowerowa",
+      "icon": "🛣️",
+      "color": "#EF4444",
+      "order": 2,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "5aaec06b-2922-4022-a514-156e042d9582",
+    "fields": {
+      "group": "c944c19d-e968-44a8-9651-4556a9435e67",
+      "name": "Uszkodzony krawężnik",
+      "slug": "uszkodzony-kraweznik",
+      "icon": "🛣️",
+      "color": "#EF4444",
+      "order": 3,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "eba3a08b-124b-418a-a252-eacee8f9eaba",
+    "fields": {
+      "group": "c944c19d-e968-44a8-9651-4556a9435e67",
+      "name": "Uszkodzona studzienka kanalizacyjna",
+      "slug": "uszkodzona-studzienka-kanalizacyjna",
+      "icon": "🛣️",
+      "color": "#EF4444",
+      "order": 4,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "0f335b73-4401-4064-b9a2-4e5a50abfb88",
+    "fields": {
+      "group": "c944c19d-e968-44a8-9651-4556a9435e67",
+      "name": "Uszkodzone oznakowanie poziome (np. pasy)",
+      "slug": "uszkodzone-oznakowanie-poziome-np-pasy",
+      "icon": "🛣️",
+      "color": "#EF4444",
+      "order": 5,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.categorygroup",
+    "pk": "8946d2a6-3c67-4119-974d-51d6a6f0be6e",
+    "fields": {
+      "name": "Oświetlenie uliczne",
+      "slug": "oswietlenie-uliczne",
+      "icon": "💡",
+      "color": "#F59E0B",
+      "order": 1,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "a71d99b6-a82c-4fb0-9503-592d3138fe9e",
+    "fields": {
+      "group": "8946d2a6-3c67-4119-974d-51d6a6f0be6e",
+      "name": "Niedziałająca latarnia",
+      "slug": "niedzialajaca-latarnia",
+      "icon": "💡",
+      "color": "#F59E0B",
+      "order": 0,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "dc36d17e-68e0-49db-ac6f-b1f60f1e99bf",
+    "fields": {
+      "group": "8946d2a6-3c67-4119-974d-51d6a6f0be6e",
+      "name": "Migające oświetlenie",
+      "slug": "migajace-oswietlenie",
+      "icon": "💡",
+      "color": "#F59E0B",
+      "order": 1,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "bc1d16ff-8d2c-406c-a0ea-71dcedb10c9b",
+    "fields": {
+      "group": "8946d2a6-3c67-4119-974d-51d6a6f0be6e",
+      "name": "Uszkodzony słup oświetleniowy",
+      "slug": "uszkodzony-slup-oswietleniowy",
+      "icon": "💡",
+      "color": "#F59E0B",
+      "order": 2,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.categorygroup",
+    "pk": "8fceeb24-c379-4db8-8762-d9a58eeb9576",
+    "fields": {
+      "name": "Sygnalizacja i znaki",
+      "slug": "sygnalizacja-i-znaki",
+      "icon": "🚦",
+      "color": "#8B5CF6",
+      "order": 2,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "1df41b71-ac59-41da-94b7-a732a459b266",
+    "fields": {
+      "group": "8fceeb24-c379-4db8-8762-d9a58eeb9576",
+      "name": "Uszkodzony znak drogowy",
+      "slug": "uszkodzony-znak-drogowy",
+      "icon": "🚦",
+      "color": "#8B5CF6",
+      "order": 0,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "e81d7006-efdc-42ac-bd4b-5802ae549477",
+    "fields": {
+      "group": "8fceeb24-c379-4db8-8762-d9a58eeb9576",
+      "name": "Przewrócony znak drogowy",
+      "slug": "przewrocony-znak-drogowy",
+      "icon": "🚦",
+      "color": "#8B5CF6",
+      "order": 1,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "0c8cad46-7faa-4aae-a504-9a5c8294a7e3",
+    "fields": {
+      "group": "8fceeb24-c379-4db8-8762-d9a58eeb9576",
+      "name": "Uszkodzona sygnalizacja świetlna",
+      "slug": "uszkodzona-sygnalizacja-swietlna",
+      "icon": "🚦",
+      "color": "#8B5CF6",
+      "order": 2,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.categorygroup",
+    "pk": "a90ad98d-34cd-4d75-b120-3b456d1a2d8e",
+    "fields": {
+      "name": "Czystość i odpady",
+      "slug": "czystosc-i-odpady",
+      "icon": "🗑️",
+      "color": "#10B981",
+      "order": 3,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "60a2bcb6-c9a7-49cc-b1f5-4b5cabc64a90",
+    "fields": {
+      "group": "a90ad98d-34cd-4d75-b120-3b456d1a2d8e",
+      "name": "Nielegalne wysypisko śmieci",
+      "slug": "nielegalne-wysypisko-smieci",
+      "icon": "🗑️",
+      "color": "#10B981",
+      "order": 0,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "7f3664c0-6ef7-4eac-b1cf-09db9a681a0d",
+    "fields": {
+      "group": "a90ad98d-34cd-4d75-b120-3b456d1a2d8e",
+      "name": "Przepełniony kosz na śmieci",
+      "slug": "przepelniony-kosz-na-smieci",
+      "icon": "🗑️",
+      "color": "#10B981",
+      "order": 1,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "c28187d5-7742-4ddf-ab81-a9ac0dd34032",
+    "fields": {
+      "group": "a90ad98d-34cd-4d75-b120-3b456d1a2d8e",
+      "name": "Śmieci w przestrzeni publicznej",
+      "slug": "smieci-w-przestrzeni-publicznej",
+      "icon": "🗑️",
+      "color": "#10B981",
+      "order": 2,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "8b918a07-27e4-4fcf-a2fb-d253d246ac12",
+    "fields": {
+      "group": "a90ad98d-34cd-4d75-b120-3b456d1a2d8e",
+      "name": "Dzikie wysypisko gruzu",
+      "slug": "dzikie-wysypisko-gruzu",
+      "icon": "🗑️",
+      "color": "#10B981",
+      "order": 3,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.categorygroup",
+    "pk": "632f6c09-6b19-440e-ac37-312e4456c6cf",
+    "fields": {
+      "name": "Zieleń miejska",
+      "slug": "zielen-miejska",
+      "icon": "🌳",
+      "color": "#22C55E",
+      "order": 4,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "f5fc4f27-9b01-4ba8-805e-350022b86810",
+    "fields": {
+      "group": "632f6c09-6b19-440e-ac37-312e4456c6cf",
+      "name": "Powalone drzewo",
+      "slug": "powalone-drzewo",
+      "icon": "🌳",
+      "color": "#22C55E",
+      "order": 0,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "399b062e-ba9c-4796-9ff6-ae7ad64febb5",
+    "fields": {
+      "group": "632f6c09-6b19-440e-ac37-312e4456c6cf",
+      "name": "Uszkodzone drzewo / niebezpieczna gałąź",
+      "slug": "uszkodzone-drzewo-niebezpieczna-galaz",
+      "icon": "🌳",
+      "color": "#22C55E",
+      "order": 1,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "824c4e5a-1434-4d21-99e8-b48a2903102f",
+    "fields": {
+      "group": "632f6c09-6b19-440e-ac37-312e4456c6cf",
+      "name": "Zniszczona zieleń miejska",
+      "slug": "zniszczona-zielen-miejska",
+      "icon": "🌳",
+      "color": "#22C55E",
+      "order": 2,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "809d6cf0-7bf5-4db8-b8db-30056ce9d4f3",
+    "fields": {
+      "group": "632f6c09-6b19-440e-ac37-312e4456c6cf",
+      "name": "Zarastający chodnik lub ścieżka",
+      "slug": "zarastajacy-chodnik-lub-sciezka",
+      "icon": "🌳",
+      "color": "#22C55E",
+      "order": 3,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.categorygroup",
+    "pk": "91cf114e-fec2-4617-a11a-549e62cc4493",
+    "fields": {
+      "name": "Infrastruktura publiczna",
+      "slug": "infrastruktura-publiczna",
+      "icon": "🏗️",
+      "color": "#3B82F6",
+      "order": 5,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "4a325611-0f49-4c1b-a1bf-78287f23a66a",
+    "fields": {
+      "group": "91cf114e-fec2-4617-a11a-549e62cc4493",
+      "name": "Uszkodzona ławka",
+      "slug": "uszkodzona-lawka",
+      "icon": "🏗️",
+      "color": "#3B82F6",
+      "order": 0,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "1b6face2-15d9-4264-8248-33c0b4062296",
+    "fields": {
+      "group": "91cf114e-fec2-4617-a11a-549e62cc4493",
+      "name": "Uszkodzony przystanek autobusowy",
+      "slug": "uszkodzony-przystanek-autobusowy",
+      "icon": "🏗️",
+      "color": "#3B82F6",
+      "order": 1,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "4ee03ff8-fa21-4150-8ab7-9bde65700047",
+    "fields": {
+      "group": "91cf114e-fec2-4617-a11a-549e62cc4493",
+      "name": "Uszkodzony plac zabaw",
+      "slug": "uszkodzony-plac-zabaw",
+      "icon": "🏗️",
+      "color": "#3B82F6",
+      "order": 2,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "426a5f65-90f1-4e9c-8d83-bfa8cfacade9",
+    "fields": {
+      "group": "91cf114e-fec2-4617-a11a-549e62cc4493",
+      "name": "Uszkodzona barierka",
+      "slug": "uszkodzona-barierka",
+      "icon": "🏗️",
+      "color": "#3B82F6",
+      "order": 3,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.categorygroup",
+    "pk": "c745bfb9-2fa3-48e4-830c-5e5ab2f20bc1",
+    "fields": {
+      "name": "Bezpieczeństwo i wandalizm",
+      "slug": "bezpieczenstwo-i-wandalizm",
+      "icon": "🚨",
+      "color": "#EC4899",
+      "order": 6,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "9d88285d-ac1f-40b4-9913-b2079f205cac",
+    "fields": {
+      "group": "c745bfb9-2fa3-48e4-830c-5e5ab2f20bc1",
+      "name": "Graffiti / wandalizm",
+      "slug": "graffiti-wandalizm",
+      "icon": "🚨",
+      "color": "#EC4899",
+      "order": 0,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "1da09356-e753-4859-816e-588255285737",
+    "fields": {
+      "group": "c745bfb9-2fa3-48e4-830c-5e5ab2f20bc1",
+      "name": "Uszkodzona infrastruktura miejska",
+      "slug": "uszkodzona-infrastruktura-miejska",
+      "icon": "🚨",
+      "color": "#EC4899",
+      "order": 1,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "c59786eb-a296-48c5-903c-57347c67a4a0",
+    "fields": {
+      "group": "c745bfb9-2fa3-48e4-830c-5e5ab2f20bc1",
+      "name": "Niebezpieczne miejsce",
+      "slug": "niebezpieczne-miejsce",
+      "icon": "🚨",
+      "color": "#EC4899",
+      "order": 2,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.categorygroup",
+    "pk": "fc012347-5928-488c-a02d-0f69434872c1",
+    "fields": {
+      "name": "Zwierzęta",
+      "slug": "zwierzeta",
+      "icon": "🐾",
+      "color": "#F97316",
+      "order": 7,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "2f03938f-a65d-4006-9e78-0da1ddd76dd5",
+    "fields": {
+      "group": "fc012347-5928-488c-a02d-0f69434872c1",
+      "name": "Martwe zwierzę na drodze",
+      "slug": "martwe-zwierze-na-drodze",
+      "icon": "🐾",
+      "color": "#F97316",
+      "order": 0,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "ddb67166-3496-4e59-a77a-618ed39db2e0",
+    "fields": {
+      "group": "fc012347-5928-488c-a02d-0f69434872c1",
+      "name": "Zwierzę bez opieki",
+      "slug": "zwierze-bez-opieki",
+      "icon": "🐾",
+      "color": "#F97316",
+      "order": 1,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.categorygroup",
+    "pk": "0d13721a-0bab-4e73-b7d1-7ffb59695769",
+    "fields": {
+      "name": "Inne",
+      "slug": "inne",
+      "icon": "📌",
+      "color": "#6B7280",
+      "order": 8,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  },
+  {
+    "model": "categories.category",
+    "pk": "e82a03e8-07a7-454a-a281-48ebb30ee407",
+    "fields": {
+      "group": "0d13721a-0bab-4e73-b7d1-7ffb59695769",
+      "name": "Inny problem",
+      "slug": "inny-problem",
+      "icon": "📌",
+      "color": "#6B7280",
+      "order": 0,
+      "created_at": "2026-03-09T21:21:09.348622+00:00"
+    }
+  }
+]

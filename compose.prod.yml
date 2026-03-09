@@ -5,7 +5,7 @@ services:
     environment:
       POSTGRES_DB: ${DB_NAME:-mapcident}
       POSTGRES_USER: ${DB_USER:-mapcident}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:-mapcident}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD is required}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -15,11 +15,13 @@ services:
       retries: 5
 
   backend:
-    build: .
+    image: ghcr.io/qwizi/mapcident:${TAG:-latest}
     restart: unless-stopped
     env_file: .env
     environment:
       DB_HOST: db
+      DEBUG: "False"
+      ALLOWED_HOSTS: ${DOMAIN:-localhost},backend
     volumes:
       - media_data:/app/media
       - static_data:/app/static
@@ -27,20 +29,31 @@ services:
       db:
         condition: service_healthy
 
+  frontend:
+    image: ghcr.io/qwizi/mapcident-frontend:${TAG:-latest}
+    restart: unless-stopped
+    environment:
+      API_URL: http://backend:8000/api/v1
+    depends_on:
+      - backend
+
   caddy:
     image: caddy:2-alpine
     restart: unless-stopped
     ports:
       - "80:80"
       - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN:-localhost}
     volumes:
-      - ./caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./caddy/Caddyfile.prod:/etc/caddy/Caddyfile:ro
       - static_data:/srv/static:ro
       - media_data:/srv/media:ro
       - caddy_data:/data
       - caddy_config:/config
     depends_on:
       - backend
+      - frontend
 
 volumes:
   postgres_data:

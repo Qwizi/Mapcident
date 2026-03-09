@@ -9,12 +9,24 @@ export interface User {
 
 export type ReportStatus = "pending" | "in_review" | "resolved" | "rejected"
 
+export interface CategoryGroup {
+  id: string
+  name: string
+  slug: string
+  icon: string
+  color: string
+  order: number
+  categories: Category[]
+}
+
 export interface Category {
   id: string
   name: string
   slug: string
   icon: string
   color: string
+  group_id: string | null
+  order: number
 }
 
 export interface ReportImage {

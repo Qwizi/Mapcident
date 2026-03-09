@@ -1,4 +1,5 @@
 import uuid
+from datetime import datetime
 from ninja import Schema
 
 
@@ -15,8 +16,8 @@ class CommentOutSchema(Schema):
     report_id: uuid.UUID
     author_id: uuid.UUID
     content: str
-    created_at: str
-    updated_at: str
+    created_at: datetime
+    updated_at: datetime
 
     class Config:
         from_attributes = True
