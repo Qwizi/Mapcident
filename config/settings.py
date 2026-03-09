@@ -88,6 +88,9 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Trust X-Forwarded-Proto from reverse proxy (Caddy / Cloudflare Tunnel)
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 from datetime import timedelta
 
 NINJA_JWT = {
