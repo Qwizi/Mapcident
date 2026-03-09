@@ -1,0 +1,49 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_NAME:-mapcident}
+      POSTGRES_USER: ${DB_USER:-mapcident}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-mapcident}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data_dev:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-mapcident}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DB_HOST: db
+      DEBUG: "True"
+      ALLOWED_HOSTS: "localhost,127.0.0.1,backend"
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    command: uv run python manage.py runserver 0.0.0.0:8000
+
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    ports:
+      - "3009:3000"
+    environment:
+      API_URL: http://backend:8000/api/v1
+      NEXT_PUBLIC_MEDIA_URL: http://localhost:8000
+      INSECURE_COOKIES: "true"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data_dev:

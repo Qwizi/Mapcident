@@ -1,0 +1,28 @@
+{
+	# Remove this block for production HTTPS
+	auto_https off
+}
+
+:80 {
+	# API
+	handle /api/* {
+		reverse_proxy backend:8000
+	}
+
+	# Django Admin
+	handle /admin/* {
+		reverse_proxy backend:8000
+	}
+
+	# Static files
+	handle /static/* {
+		root * /srv
+		file_server
+	}
+
+	# Media files
+	handle /media/* {
+		root * /srv
+		file_server
+	}
+}
