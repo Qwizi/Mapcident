@@ -1,4 +1,8 @@
-{$DOMAIN} {
+{
+	auto_https off
+}
+
+:80 {
 	# API
 	handle /api/* {
 		reverse_proxy backend:8000
@@ -23,6 +27,10 @@
 
 	# Frontend (Next.js) – catch-all
 	handle {
-		reverse_proxy frontend:3000
+		reverse_proxy frontend:3000 {
+			header_up X-Forwarded-Proto {header.X-Forwarded-Proto}
+		}
 	}
+
+	header Permissions-Policy "geolocation=(self)"
 }

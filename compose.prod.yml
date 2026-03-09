@@ -42,9 +42,6 @@ services:
     restart: unless-stopped
     ports:
       - "80:80"
-      - "443:443"
-    environment:
-      DOMAIN: ${DOMAIN:-localhost}
     volumes:
       - ./caddy/Caddyfile.prod:/etc/caddy/Caddyfile:ro
       - static_data:/srv/static:ro
