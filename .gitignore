@@ -5,6 +5,7 @@ __pycache__/
 dist/
 build/
 .env
+.pnpm-store/
 *.sqlite3
 media/
 static/

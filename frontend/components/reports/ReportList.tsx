@@ -16,6 +16,8 @@ import { Skeleton } from "@/components/ui/skeleton"
 import { ReportStatusBadge } from "./ReportStatusBadge"
 import type { Report, Category, CategoryGroup } from "@/lib/types"
 
+type ReportSort = "-created_at" | "created_at"
+
 function haversineDistance(
   lat1: number, lng1: number,
   lat2: number, lng2: number
@@ -41,7 +43,7 @@ interface ReportListProps {
   categories: Category[]
   categoryGroups?: CategoryGroup[]
   loading?: boolean
-  onFilterChange: (filters: { category_id?: string; status?: string }) => void
+  onFilterChange: (filters: { category_id?: string; status?: string; ordering?: string }) => void
   onReportSelect?: (report: Report) => void
   userPosition?: { lat: number; lng: number } | null
 }
@@ -58,6 +60,7 @@ export function ReportList({
   const [search, setSearch] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("all")
   const [selectedStatus, setSelectedStatus] = useState("all")
+  const [selectedSort, setSelectedSort] = useState<ReportSort>("-created_at")
 
   const categoryMap = Object.fromEntries(categories.map((c) => [c.id, c]))
 
@@ -67,6 +70,7 @@ export function ReportList({
     onFilterChange({
       category_id: v === "all" ? undefined : v,
       status: selectedStatus === "all" ? undefined : selectedStatus,
+      ordering: selectedSort,
     })
   }
 
@@ -76,28 +80,31 @@ export function ReportList({
     onFilterChange({
       category_id: selectedCategory === "all" ? undefined : selectedCategory,
       status: v === "all" ? undefined : v,
+      ordering: selectedSort,
+    })
+  }
+
+  function handleSortChange(value: string | null) {
+    const v = (value ?? "-created_at") as ReportSort
+    setSelectedSort(v)
+    onFilterChange({
+      category_id: selectedCategory === "all" ? undefined : selectedCategory,
+      status: selectedStatus === "all" ? undefined : selectedStatus,
+      ordering: v,
     })
   }
 
   const sortedReports = useMemo(() => {
-    let filtered = reports.filter((r) =>
+    const filtered = reports.filter((r) =>
       r.title.toLowerCase().includes(search.toLowerCase())
     )
 
-    if (userPosition) {
-      filtered = filtered
-        .map((r) => ({
-          ...r,
-          _distance: haversineDistance(
-            userPosition.lat, userPosition.lng,
-            r.latitude, r.longitude
-          ),
-        }))
-        .sort((a, b) => a._distance - b._distance)
-    }
-
-    return filtered
-  }, [reports, search, userPosition])
+    return [...filtered].sort((a, b) => {
+      const aTime = new Date(a.created_at).getTime()
+      const bTime = new Date(b.created_at).getTime()
+      return selectedSort === "created_at" ? aTime - bTime : bTime - aTime
+    })
+  }, [reports, search, selectedSort])
 
   return (
     <div className="flex h-full flex-col gap-3 p-4">
@@ -115,28 +122,40 @@ export function ReportList({
         />
       </div>
 
-      <div className="flex gap-2">
+      <div className="space-y-2">
         <CategoryCombobox
           value={selectedCategory}
           onChange={handleCategoryChange}
           categoryGroups={categoryGroups}
           categories={categories}
           showAll
-          className="flex-1 text-xs"
+          className="w-full text-xs"
         />
 
-        <Select value={selectedStatus} onValueChange={handleStatusChange}>
-          <SelectTrigger className="flex-1 text-xs">
-            <SelectValue placeholder="Status" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">Wszystkie statusy</SelectItem>
-            <SelectItem value="pending">Oczekujące</SelectItem>
-            <SelectItem value="in_review">W trakcie</SelectItem>
-            <SelectItem value="resolved">Rozwiązane</SelectItem>
-            <SelectItem value="rejected">Odrzucone</SelectItem>
-          </SelectContent>
-        </Select>
+        <div className="grid grid-cols-2 gap-2">
+          <Select value={selectedStatus} onValueChange={handleStatusChange}>
+            <SelectTrigger className="text-xs">
+              <SelectValue placeholder="Status" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">Wszystkie statusy</SelectItem>
+              <SelectItem value="pending">Oczekujące</SelectItem>
+              <SelectItem value="in_review">W trakcie</SelectItem>
+              <SelectItem value="resolved">Rozwiązane</SelectItem>
+              <SelectItem value="rejected">Odrzucone</SelectItem>
+            </SelectContent>
+          </Select>
+
+          <Select value={selectedSort} onValueChange={handleSortChange}>
+            <SelectTrigger className="text-xs">
+              <SelectValue placeholder="Sortowanie" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="-created_at">Najnowsze</SelectItem>
+              <SelectItem value="created_at">Najstarsze</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
       </div>
 
       <ScrollArea className="flex-1">

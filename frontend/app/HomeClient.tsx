@@ -106,7 +106,7 @@ export function HomeClient({
   }, [])
 
   const handleFilterChange = useCallback(
-    async (filters: { category_id?: string; status?: string }) => {
+    async (filters: { category_id?: string; status?: string; ordering?: string }) => {
       setListLoading(true)
       try {
         const data = await getReportsAction(filters)
