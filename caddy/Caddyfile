@@ -14,15 +14,18 @@
 		reverse_proxy backend:8000
 	}
 
-	# Static files
+	# Static files served by Django in development
 	handle /static/* {
-		root * /srv
-		file_server
+		reverse_proxy backend:8000
 	}
 
-	# Media files
+	# Media files served by Django in development
 	handle /media/* {
-		root * /srv
-		file_server
+		reverse_proxy backend:8000
+	}
+
+	# Frontend (Next.js)
+	handle {
+		reverse_proxy frontend:3000
 	}
 }
